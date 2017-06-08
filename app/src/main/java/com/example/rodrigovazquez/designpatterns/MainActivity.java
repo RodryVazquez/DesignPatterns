@@ -3,6 +3,9 @@ package com.example.rodrigovazquez.designpatterns;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.AbstractFactory;
+import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.Car;
+import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.FactoryProducer;
 import com.example.rodrigovazquez.designpatterns.BuilderPattern.LaunchOrderTele;
 import com.example.rodrigovazquez.designpatterns.FactoryPattern.Enums.WebsiteType;
 import com.example.rodrigovazquez.designpatterns.FactoryPattern.Factory.WebsiteFactory;
@@ -45,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(shopWebsite.getPages());
 
         /******************* Abstract Factory Pattern *************/
-
+        AbstractFactory abstractFactory = FactoryProducer.getFactory("TO DO Nombre del factory");
+        Car carType =  abstractFactory.getCarType("Neon");
+        System.out.println(carType.StartEngine());
+        System.out.println(carType.Start());
+        System.out.println(carType.Stop());
+        System.out.println(carType.getGeneralBrand());
+        System.out.println(carType.getFabricationYear());
     }
 }
