@@ -1,5 +1,7 @@
 package com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern;
 
+import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.Enums.BrandType;
+
 /**
  * Abstract factory
  */
@@ -7,5 +9,5 @@ package com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern;
 public abstract class AbstractFactory {
 
     //Car Factory
-    public abstract Car getCarType(String brand);
+    public abstract Car getCarType(BrandType brand);
 }
