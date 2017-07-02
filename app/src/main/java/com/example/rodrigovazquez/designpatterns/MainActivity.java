@@ -3,16 +3,21 @@ package com.example.rodrigovazquez.designpatterns;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.AbstractFactory;
-import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.Car;
-import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.Enums.BrandType;
-import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.Enums.FactoryType;
-import com.example.rodrigovazquez.designpatterns.AbstractFactoryPattern.FactoryProducer;
-import com.example.rodrigovazquez.designpatterns.BuilderPattern.LaunchOrderTele;
-import com.example.rodrigovazquez.designpatterns.FactoryPattern.Enums.WebsiteType;
-import com.example.rodrigovazquez.designpatterns.FactoryPattern.Factory.WebsiteFactory;
-import com.example.rodrigovazquez.designpatterns.FactoryPattern.Website;
-import com.example.rodrigovazquez.designpatterns.Singlenton.DbSinglenton;
+import com.example.rodrigovazquez.designpatterns.Creational.AbstractFactoryPattern.AbstractFactory;
+import com.example.rodrigovazquez.designpatterns.Creational.AbstractFactoryPattern.Car;
+import com.example.rodrigovazquez.designpatterns.Creational.AbstractFactoryPattern.Enums.BrandType;
+import com.example.rodrigovazquez.designpatterns.Creational.AbstractFactoryPattern.Enums.FactoryType;
+import com.example.rodrigovazquez.designpatterns.Creational.AbstractFactoryPattern.FactoryProducer;
+import com.example.rodrigovazquez.designpatterns.Creational.BuilderPattern.LaunchOrderTele;
+import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Enums.WebsiteType;
+import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Factory.WebsiteFactory;
+import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Website;
+import com.example.rodrigovazquez.designpatterns.Creational.Singlenton.DbSinglenton;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.Employee;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.EmployeeModel;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.EmployeeService;
+
+import java.util.List;
 
 /**
  * Main activity
@@ -57,5 +62,10 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(carType.Stop());
         System.out.println(carType.getGeneralBrand());
         System.out.println(carType.getFabricationYear());
+
+        /******************** Adapter Pattern *******************/
+        EmployeeService service = new EmployeeService();
+        List<Employee> ds = service.getEmployeeList();
+        System.out.println(ds);
     }
 }
