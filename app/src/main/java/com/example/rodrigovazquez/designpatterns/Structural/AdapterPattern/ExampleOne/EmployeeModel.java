@@ -1,4 +1,4 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern;
+package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne;
 
 /**
  * Created by Rodrigo Vazquez on 02/07/2017.

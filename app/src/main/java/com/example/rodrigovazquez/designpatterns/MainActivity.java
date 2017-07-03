@@ -13,9 +13,9 @@ import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Enums
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Factory.WebsiteFactory;
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Website;
 import com.example.rodrigovazquez.designpatterns.Creational.Singlenton.DbSinglenton;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.Employee;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.EmployeeModel;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.EmployeeService;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.EmployeeService;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleTwo.AudioPlayer;
 
 import java.util.List;
 
@@ -67,5 +67,14 @@ public class MainActivity extends AppCompatActivity {
         EmployeeService service = new EmployeeService();
         List<Employee> ds = service.getEmployeeList();
         System.out.println(ds);
+
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.Play(".mp4", "The lost City.mp4");
+        audioPlayer.Play(".mp3","Secrets.mp3");
+        audioPlayer.Play(".vlc", "Amazing.vlc");
+
+        audioPlayer.Play(".mpeg","If I Knew.mpeg");
+
+        /****************** Decorator Pattern *********************/
     }
 }

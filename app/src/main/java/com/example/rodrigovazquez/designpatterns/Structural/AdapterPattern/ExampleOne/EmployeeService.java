@@ -1,6 +1,6 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern;
+package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne;
 
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.Adapter.EmployeeCTAdapter;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Adapter.EmployeeCTAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

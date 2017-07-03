@@ -1,7 +1,7 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.Adapter;
+package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Adapter;
 
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.Employee;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.EmployeeCT;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.EmployeeCT;
 
 /**
  * Created by Rodrigo Vazquez on 02/07/2017.
