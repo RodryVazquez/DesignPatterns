@@ -13,12 +13,31 @@ import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Enums
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Factory.WebsiteFactory;
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Website;
 import com.example.rodrigovazquez.designpatterns.Creational.Singlenton.DbSinglenton;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.BigSandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ConcreteDecorators.BagetteDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.Sandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.SimpleSandwich;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.EmployeeService;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleTwo.AudioPlayer;
 
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
-
+        /*
+            Conceptos de compiladores
+            Tipos de errores
+            Pasos de compilador
+            Arquitectura de micros
+            Proyectos
+            Desarrollo
+            Asm
+            Lenguaje
+        */
 /**
  * Main activity
  */
@@ -76,5 +95,37 @@ public class MainActivity extends AppCompatActivity {
         audioPlayer.Play(".mpeg","If I Knew.mpeg");
 
         /****************** Decorator Pattern *********************/
+
+        /******** Example ********/
+        File file = new File("./output.txt");
+        try {
+            file.createNewFile();
+            OutputStream outputStream = new FileOutputStream(file);
+            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+
+            dataOutputStream.writeChars("Decorator Pattern");
+
+            dataOutputStream.close();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        /*************************/
+
+        //Simple Sandwich
+        Sandwich simpleSandwich = new SimpleSandwich();
+        simpleSandwich.make();
+
+        //Big Sandwich
+        Sandwich bigSandwich = new BigSandwich();
+        bigSandwich.make();
+
+        //Bagette decorator (Simple Sandwich)
+        Sandwich bagetteSandwich = new BagetteDecorator(new SimpleSandwich());
+        bagetteSandwich.make();
+
+        //Bagette decorator (Big Sandwich)
+        Sandwich bagetteBigSandwich = new BagetteDecorator(new BigSandwich());
+        bagetteBigSandwich.make();
     }
 }
