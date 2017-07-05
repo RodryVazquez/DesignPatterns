@@ -1,5 +1,6 @@
 package com.example.rodrigovazquez.designpatterns;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,6 +16,8 @@ import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Websi
 import com.example.rodrigovazquez.designpatterns.Creational.Singlenton.DbSinglenton;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.BigSandwich;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ConcreteDecorators.BagetteDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.BaseCPU;
+import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.BasicPc;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.Sandwich;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.SimpleSandwich;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
@@ -27,7 +30,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
         /*
             Conceptos de compiladores
             Tipos de errores
@@ -127,5 +135,78 @@ public class MainActivity extends AppCompatActivity {
         //Bagette decorator (Big Sandwich)
         Sandwich bagetteBigSandwich = new BagetteDecorator(new BigSandwich());
         bagetteBigSandwich.make();
+
+        /***********************************/
+
+        BaseCPU baseCPU = new BasicPc();
+        System.out.println("Base price basic PC " + baseCPU.basePrice());
+        System.out.println("Base price basic PC Policy " + baseCPU.priceBasePolicy());
+
+
+
+
+
+
+
+
+
+
+        /************** DEMO ********************/
+        QueueDemo(1289);
+        StackDemo(1289);
+    }
+
+    /**
+     * First-In Fist-Out FIFO
+     * Primero en entrar primero en salir
+     * @param size
+     */
+    public void QueueDemo(int size){
+
+        Queue<String> stringQueue = new LinkedList<>();
+
+        //Agrega un elemento a la cola
+        boolean isAdded = stringQueue.add("Demo 1");
+        stringQueue.add("Demo 2");
+        stringQueue.add("Demo 3");
+        stringQueue.add("Demo 4");
+        stringQueue.add("Demo 5");
+
+        //Elemento actual de la cola
+        String currentQueue = stringQueue.element();
+
+        //Remueve el primer elemento
+        stringQueue.remove();
+
+        //Remueve y retorna el primer elemento
+        String getAndRemoveQueue = stringQueue.poll();
+
+        //Retorna el primer elemento
+        String getCurrentQueue = stringQueue.peek();
+
+        //Indica si la cola esta vacia
+        boolean isEmty = stringQueue.isEmpty();
+    }
+
+    /**
+     * Last-In Last-Out LIFO
+     * Ultimo en entrar primero en salir
+     * @param size
+     */
+    public void StackDemo(int size) {
+
+        //Creamos la pila
+        Stack<String> stringStack = new Stack<>();
+        //Introduce un elemento en la pila
+        stringStack.push("Demo 1");
+        stringStack.push("Demo 2");
+        stringStack.push("Demo 3");
+        //Saca un elemento de la pila
+        String element = stringStack.pop();
+        //Consulta el primer elemento de la cima
+        String lastInElement = stringStack.peek();
+
+        //Comprueba si la pila esta vacia
+        boolean isEmpty = stringStack.isEmpty();
     }
 }
