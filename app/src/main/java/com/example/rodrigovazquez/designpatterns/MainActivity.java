@@ -1,6 +1,5 @@
 package com.example.rodrigovazquez.designpatterns;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,12 +13,14 @@ import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Enums
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Factory.WebsiteFactory;
 import com.example.rodrigovazquez.designpatterns.Creational.FactoryPattern.Website;
 import com.example.rodrigovazquez.designpatterns.Creational.Singlenton.DbSinglenton;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.BigSandwich;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ConcreteDecorators.BagetteDecorator;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.BaseCPU;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.BasicPc;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.Sandwich;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.SimpleSandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.BigSandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ConcreteDecorators.BagetteDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.Components.BaseCPU;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.ConcreteComponents.BasicPc;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.ConcreteDecorators.GamerFanDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.ConcreteDecorators.GamerRamDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.Sandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.SimpleSandwich;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.EmployeeService;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleTwo.AudioPlayer;
@@ -28,10 +29,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -142,14 +140,14 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Base price basic PC " + baseCPU.basePrice());
         System.out.println("Base price basic PC Policy " + baseCPU.priceBasePolicy());
 
+        GamerFanDecorator gamerFanDecorator = new GamerFanDecorator(baseCPU);
+        System.out.println("Price with new Fan " + gamerFanDecorator.getNewPrice());
 
+        GamerRamDecorator gamerRamDecorator = new GamerRamDecorator(baseCPU);
+        System.out.println("Price with new Ram " + gamerRamDecorator.getNewPrice());
 
-
-
-
-
-
-
+        GamerRamDecorator fullDecorator = new GamerRamDecorator(gamerFanDecorator);
+        System.out.println("Complete price " + fullDecorator.basePrice());
 
         /************** DEMO ********************/
         QueueDemo(1289);

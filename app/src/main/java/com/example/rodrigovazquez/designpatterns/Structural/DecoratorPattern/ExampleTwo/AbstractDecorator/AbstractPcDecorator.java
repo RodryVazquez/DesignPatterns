@@ -1,9 +1,11 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.AbstractDecorator;
+package com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.AbstractDecorator;
 
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo.BaseCPU;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.Components.BaseCPU;
 
 /**
- * Created by Rodry on 7/4/2017.
+ * Mantiene una referencia al componente asociado
+ * hereda la superclase componente delegando en el componente
+ * asociado
  */
 
 public abstract class AbstractPcDecorator extends BaseCPU {

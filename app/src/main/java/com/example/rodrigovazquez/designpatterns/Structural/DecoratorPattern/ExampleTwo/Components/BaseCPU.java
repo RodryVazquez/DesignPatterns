@@ -1,7 +1,7 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ExampleTwo;
+package com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ExampleTwo.Components;
 
 /**
- * Clase abstracta para los objetos que pueden
+ * Clase abstracta Componente para los objetos que pueden
  * tener responsabilidades añadidas
  */
 

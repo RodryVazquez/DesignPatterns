@@ -1,7 +1,7 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.ConcreteDecorators;
+package com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.ConcreteDecorators;
 
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.AbstractDecorator.SandwichDecorator;
-import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern.Sandwich;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.AbstractDecorator.SandwichDecorator;
+import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.Sandwich;
 
 /**
  * Created by Rodry on 7/3/2017.

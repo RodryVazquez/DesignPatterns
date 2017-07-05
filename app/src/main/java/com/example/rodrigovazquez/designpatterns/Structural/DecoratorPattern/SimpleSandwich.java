@@ -1,4 +1,4 @@
-package com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.DecoratorPattern;
+package com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern;
 
 /**
  * Created by Rodry on 7/3/2017.
