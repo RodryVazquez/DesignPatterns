@@ -24,6 +24,8 @@ import com.example.rodrigovazquez.designpatterns.Structural.DecoratorPattern.Sim
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.Employee;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleOne.EmployeeService;
 import com.example.rodrigovazquez.designpatterns.Structural.AdapterPattern.ExampleTwo.AudioPlayer;
+import com.example.rodrigovazquez.designpatterns.Structural.Facade.ServiceMaker;
+import com.example.rodrigovazquez.designpatterns.Structural.Proxy.HttpProxyElement;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -34,16 +36,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
-        /*
-            Conceptos de compiladores
-            Tipos de errores
-            Pasos de compilador
-            Arquitectura de micros
-            Proyectos
-            Desarrollo
-            Asm
-            Lenguaje
-        */
+
 /**
  * Main activity
  */
@@ -80,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(shopWebsite.getPages());
 
         /******************* Abstract Factory Pattern *************/
+
         AbstractFactory abstractFactory = FactoryProducer.getFactory(FactoryType.CAR);
         Car carType =  abstractFactory.getCarType(BrandType.NEON);
         System.out.println(carType.StartEngine());
@@ -89,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(carType.getFabricationYear());
 
         /******************** Adapter Pattern *******************/
+
         EmployeeService service = new EmployeeService();
         List<Employee> ds = service.getEmployeeList();
         System.out.println(ds);
@@ -103,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         /****************** Decorator Pattern *********************/
 
         /******** Example ********/
+
         File file = new File("./output.txt");
         try {
             file.createNewFile();
@@ -148,6 +144,20 @@ public class MainActivity extends AppCompatActivity {
 
         GamerRamDecorator fullDecorator = new GamerRamDecorator(gamerFanDecorator);
         System.out.println("Complete price " + fullDecorator.basePrice());
+
+        /********************* FACADE **************************/
+
+        ServiceMaker serviceMaker = new ServiceMaker();
+        serviceMaker.openStudentConnection();
+        System.out.println("" + serviceMaker.getStudentData());
+
+        serviceMaker.openTeacherConnection();
+        System.out.println("" + serviceMaker.getTeacherData());
+
+        /************************ PROXY ******************************/
+
+        HttpProxyElement proxyElement = new HttpProxyElement();
+        proxyElement.Request();
 
         /************** DEMO ********************/
         QueueDemo(1289);
